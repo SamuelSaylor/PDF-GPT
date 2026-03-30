@@ -16,16 +16,17 @@ def lastUpdate(): print("#########################################\n\nLast updat
 
 def repository(): print("#########################################\n\nhttps://github.com/SamuelSaylor/PDF-GPT\n\n#########################################")
 
-def ignoreListADD():
+def ignoreListADD(INPUT):
     pass
 
-def ignoreListREMOVE():
+def ignoreListREMOVE(INPUT):
     pass
 
 def ignoreListSHOW():
     pass
 
 def PDFGPT():
+    IGNORE_LIST = []
     pass
 
 lastUpdate()
