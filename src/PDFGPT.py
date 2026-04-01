@@ -1,4 +1,6 @@
 import csv
+import os
+import fpdf
 
 COMMAND_LIST = [
     "commandList - Provides a list of commands in the terminal.",
@@ -42,13 +44,25 @@ def ignoreListSHOW():
             print(row[0])
     print("\n#########################################")
 
-def PDFGPT():
+def PDFGPT(root_dir="."):
     IGNORE_LIST = []
 
     with open('ignore_list.csv', mode='r') as file:
         reader = csv.reader(file)
         for row in reader:
             IGNORE_LIST.append(row[0])
+        
+    for dirpath, dirnames, filenames in os.walk(root_dir):
+        for file in filenames:
+            file_path = os.path.join(dirpath, file)
+            if file in IGNORE_LIST or file_path in IGNORE_LIST:
+                continue
+            else:
+                try:
+                    with open(file_path, "r", encoding="utf-8") as f:
+                        f.read(1)
+                except (print("NOTE: File {} is not readable and will be skipped.".format(file_path))):
+                    continue
 
 if __name__ == "__main__":
     PDFGPT()
