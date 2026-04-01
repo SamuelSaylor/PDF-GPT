@@ -16,6 +16,9 @@ def lastUpdate(): print("#########################################\n\nLast updat
 
 def repository(): print("#########################################\n\nhttps://github.com/SamuelSaylor/PDF-GPT\n\n#########################################")
 
+def copy():
+    pass
+
 def ignoreListADD(INPUT):
     pass
 
