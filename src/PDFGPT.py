@@ -11,7 +11,7 @@ COMMAND_LIST = [
 
 def commandList():
     print("#########################################\nPDFGPT - Compiles all readable files into a PDF with instructions for a LLM to scan and interpret it.\n")
-    for i in range(len(COMMAND_LIST)): print(COMMAND_LIST[i])
+    for cmd in COMMAND_LIST: print(cmd)
     print("\n#########################################")
 
 def lastUpdate(): print("#########################################\n\nLast updated: 03/30/2026 @ XX:XX\n\n#########################################")
@@ -49,9 +49,6 @@ def PDFGPT():
         reader = csv.reader(file)
         for row in reader:
             IGNORE_LIST.append(row[0])
-    
-    
 
-lastUpdate()
-repository()
-commandList()
+if __name__ == "__main__":
+    PDFGPT()
