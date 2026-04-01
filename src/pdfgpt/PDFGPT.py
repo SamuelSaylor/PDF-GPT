@@ -2,7 +2,6 @@ import csv
 import os
 import sys
 from fpdf import FPDF
-from sympy import content
 
 ignorecsv = os.path.join(os.path.dirname(__file__), 'IGNORELIST.csv')
 
