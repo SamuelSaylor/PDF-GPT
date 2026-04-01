@@ -1,5 +1,6 @@
 import csv
 import os
+import sys
 from fpdf import FPDF
 from sympy import content
 
@@ -19,18 +20,21 @@ def commandList():
     for cmd in COMMAND_LIST: print(cmd)
     print("\n#########################################")
 
-def lastUpdate(): print("#########################################\n\nLast updated: 03/31/2026 @ 09:58 CDT\n\n#########################################")
+def lastUpdate(): print("#########################################\n\nLast updated: 03/31/2026 @ 10:02 CDT\n\n#########################################")
 
 def repository(): print("#########################################\n\nhttps://github.com/SamuelSaylor/PDF-GPT\n\n#########################################")
 
-def ignoreListADD(INPUT):
+def ignoreListADD():
+    INPUT = sys.argv[1]
+
     with open(ignorecsv, mode='a', newline='') as file:
         writer = csv.writer(file)
         writer.writerow([INPUT])
 
     print(f"#########################################\n\nAdded file: {INPUT} to ignore list.\n\n#########################################")
 
-def ignoreListREMOVE(INPUT):
+def ignoreListREMOVE():
+    INPUT = sys.argv[1]
 
     with open(ignorecsv, mode='r') as file:
         reader = csv.reader(file)
@@ -89,9 +93,5 @@ def PDFGPT(root_dir="."):
     pdf.output("PDFGPT.pdf")
     print("\nPDF successfully generated. Check the root directory for PDFGPT.pdf.\n\nTIP: Ignore files you don't want by using the ignoreListADD command.\n##########################################")
 
-"""
 if __name__ == "__main__":
     PDFGPT()
-"""
-
-PDFGPT()
