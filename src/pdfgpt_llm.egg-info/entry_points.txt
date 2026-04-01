@@ -1,0 +1,8 @@
+[console_scripts]
+commandlist = pdfgpt.PDFGPT:commandList
+ignoreadd = pdfgpt.PDFGPT:ignoreListADD
+ignoreremove = pdfgpt.PDFGPT:ignoreListREMOVE
+ignoreshow = pdfgpt.PDFGPT:ignoreListSHOW
+lastupdate = pdfgpt.PDFGPT:lastUpdate
+pdfgpt = pdfgpt.PDFGPT:PDFGPT
+repository = pdfgpt.PDFGPT:repository
