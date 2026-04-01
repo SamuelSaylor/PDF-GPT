@@ -19,12 +19,9 @@ def commandList():
     for cmd in COMMAND_LIST: print(cmd)
     print("\n#########################################")
 
-def lastUpdate(): print("#########################################\n\nLast updated: 03/30/2026 @ XX:XX\n\n#########################################")
+def lastUpdate(): print("#########################################\n\nLast updated: 03/31/2026 @ 09:58 CDT\n\n#########################################")
 
 def repository(): print("#########################################\n\nhttps://github.com/SamuelSaylor/PDF-GPT\n\n#########################################")
-
-def copy():
-    pass
 
 def ignoreListADD(INPUT):
     with open(ignorecsv, mode='a', newline='') as file:

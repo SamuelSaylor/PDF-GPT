@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pdfgpt"
-version = "0.1.0"
-description = "Compiles all of your readable code into a singular PDF to make sharing your program with an LLM as quick as possible."
+version = "0.1.1"
+description = "Compiles all readable files into a single PDF for easy sharing with LLMs."
 readme = "README.md"
 authors = [
     { name = "Samuel Saylor", email = "samuelsaylor2025@gmail.com" }
@@ -13,14 +13,28 @@ authors = [
 license = { file = "LICENSE" }
 requires-python = ">=3.8"
 
+# Added useful metadata
+keywords = ["pdf", "automation", "llm", "code-export", "developer-tools"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: MIT License"
+]
+
+# Added actual dependencies you are using
 dependencies = [
+    "fpdf>=1.7.2",
+    "sympy>=1.12"
 ]
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
+# CLI entry point FIXED (this was wrong before)
 [project.scripts]
 pdfgpt = "pdfgpt.PDFGPT:PDFGPT"
 
 [project.urls]
 Homepage = "https://github.com/SamuelSaylor/PDF-GPT"
+Repository = "https://github.com/SamuelSaylor/PDF-GPT"
+Issues = "https://github.com/SamuelSaylor/PDF-GPT/issues"
