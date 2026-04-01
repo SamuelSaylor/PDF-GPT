@@ -1,3 +1,5 @@
+import csv
+
 COMMAND_LIST = [
     "commandList - Provides a list of commands in the terminal.",
     "ignoreListADD - Adds a file to the ignore list based on its name.",
@@ -20,17 +22,35 @@ def copy():
     pass
 
 def ignoreListADD(INPUT):
-    pass
+    with open('ignore_list.csv', mode='a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow([INPUT])
 
 def ignoreListREMOVE(INPUT):
-    pass
+    with open('ignore_list.csv', mode='r') as file:
+        reader = csv.reader(file)
+        rows = [row for row in reader if row[0] != INPUT]
+    with open('ignore_list.csv', mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(rows)
 
 def ignoreListSHOW():
-    pass
+    print("#########################################\n\nIgnore List:\n")
+    with open('ignore_list.csv', mode='r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            print(row[0])
+    print("\n#########################################")
 
 def PDFGPT():
     IGNORE_LIST = []
-    pass
+
+    with open('ignore_list.csv', mode='r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            IGNORE_LIST.append(row[0])
+    
+    
 
 lastUpdate()
 repository()
