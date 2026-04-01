@@ -20,7 +20,7 @@ dependencies = [
 where = ["src"]
 
 [project.scripts]
-pdfgpt = "pdfgpt.main:PDFGPT"
+pdfgpt = "pdfgpt.PDFGPT:PDFGPT"
 
 [project.urls]
 Homepage = "https://github.com/SamuelSaylor/PDF-GPT"
