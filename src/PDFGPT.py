@@ -8,9 +8,9 @@ ignorecsv = os.path.join(os.path.dirname(__file__), 'IGNORELIST.csv')
 
 COMMAND_LIST = [
     "commandList - Provides a list of commands in the terminal.",
-    "ignoreListADD - Adds a file to the ignore list based on its name.",
-    "ignoreListREMOVE - Removes a file from the ignore list based on its name.",
-    "ignoreListSHOW - Provides the contents of the ignore list in the terminal."
+    "ignorelistadd - Adds a file to the ignore list based on its name.",
+    "ignorelistremove - Removes a file from the ignore list based on its name.",
+    "ignorelistshow - Provides the contents of the ignore list in the terminal.",
     "lastUpdate - Prints the latest update.",
     "repository - Prinst the link to the repository for PDF GPT."
 ]
@@ -20,7 +20,7 @@ def commandList():
     for cmd in COMMAND_LIST: print(cmd)
     print("\n#########################################")
 
-def lastUpdate(): print("#########################################\n\nLast updated: 03/31/2026 @ 10:02 CDT\n\n#########################################")
+def lastUpdate(): print("#########################################\n\nLast updated: 03/31/2026 @ 10:57 PM CDT\n\n#########################################")
 
 def repository(): print("#########################################\n\nhttps://github.com/SamuelSaylor/PDF-GPT\n\n#########################################")
 
