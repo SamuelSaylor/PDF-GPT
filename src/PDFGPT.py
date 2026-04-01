@@ -97,4 +97,4 @@ if __name__ == "__main__":
     PDFGPT()
 """
 
-ignoreListADD("PDFGPT.pdf")
+PDFGPT()
