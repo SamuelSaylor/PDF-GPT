@@ -6,7 +6,7 @@ Have you ever tried to fix one of your coding problems but you found the process
 ## Installation
 To install PDF-GPT, simply run the following command into your terminal:
 
-```pip install INSERTNAMEHEREIGOTNOIDEAWHATITISGOINGTOBEREADASINSIDEOFPYPI```
+```pip install pdfgpt-llm```
 
 ## Commands List
 
