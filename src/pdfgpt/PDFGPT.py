@@ -7,8 +7,8 @@ ignorecsv = os.path.join(os.path.dirname(__file__), 'IGNORELIST.csv')
 
 COMMAND_LIST = [
     "commandlist - Provides a list of commands in the terminal.",
-    "ignoreadd - Adds a file to the ignore list based on its name.",
-    "ignoreremove - Removes a file from the ignore list based on its name.",
+    "ignoreadd - Adds a file or path to the ignore list.",
+    "ignoreremove - Removes a file or path from the ignore list.",
     "ignoreshow - Provides the contents of the ignore list in the terminal.",
     "lastupdate - Prints the latest update.",
     "repository - Prinst the link to the repository for PDF GPT."
@@ -55,12 +55,27 @@ def ignoreListSHOW():
 def PDFGPT(root_dir="."):
     print("#########################################\n\nGenerating PDF...")
     
-    IGNORE_LIST = []
+    ignore_names = set()
+    ignore_paths = []
+    root_abs = os.path.abspath(root_dir)
 
     with open(ignorecsv, mode='r') as file:
         reader = csv.reader(file)
         for row in reader:
-            IGNORE_LIST.append(row[0])
+            if not row:
+                continue
+            entry = row[0].strip()
+            if not entry:
+                continue
+
+            if os.path.sep in entry or '/' in entry or '\\' in entry:
+                normalized = os.path.normpath(entry)
+                if os.path.isabs(normalized):
+                    ignore_paths.append(normalized)
+                else:
+                    ignore_paths.append(os.path.normpath(os.path.join(root_abs, normalized)))
+            else:
+                ignore_names.add(entry)
 
     pdf = FPDF()
     pdf.set_auto_page_break(auto=True, margin=15)
@@ -70,13 +85,16 @@ def PDFGPT(root_dir="."):
     for dirpath, dirnames, filenames in os.walk(root_dir):
         for file in filenames:
             file_path = os.path.join(dirpath, file)
-            if file in IGNORE_LIST or file_path in IGNORE_LIST:
+            file_abs = os.path.abspath(file_path)
+            if file in ignore_names:
+                continue
+            if any(file_abs == path or file_abs.startswith(path + os.path.sep) for path in ignore_paths):
                 continue
             else:
                 try:
                     with open(file_path, "r", encoding="utf-8") as f:
                         content = f.read()
-                except (UnicodeDecodeError, PermissionError,IsADirectoryError):
+                except (UnicodeDecodeError, PermissionError, IsADirectoryError):
                     print(f"NOTE: File {file_path} is not readable and will be skipped.")
                     continue
             
