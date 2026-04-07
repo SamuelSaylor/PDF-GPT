@@ -35,3 +35,6 @@ The Ignore List essentially acts as a .gitignore, as any file name added to the 
 Here's a quick demo of me using a PDFGPT-created .pdf file to have ChatGPT fix issues that it may find across ten different programs from ten different languages! Keep in mind this was done BEFORE I added terminal accessibility, so instead of being ran through the terminal, the PDF was compiled by running PDFGPT.py.
 
 [![Demo Run](https://img.youtube.com/vi/jTag6m7WDIk/0.jpg)](https://www.youtube.com/watch?v=jTag6m7WDIk)
+
+### Example Problems
+Additional to the demo run video, I have created a folder in the repository, `Fun example problems!`. You can use that for testing if curious on as to how this program works. Please refer to the `readme.txt` file included inside of the folder for more information.
