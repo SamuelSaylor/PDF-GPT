@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pdfgpt-llm"
-version = "0.1.0"
+version = "0.2.0"
 description = "Compiles all readable files into a single PDF for easy sharing with LLMs."
 readme = "README.md"
 authors = [
