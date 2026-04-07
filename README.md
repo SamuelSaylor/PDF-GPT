@@ -18,8 +18,8 @@ This project includes several terminal commands for managing the workflow and ac
 |---------------|-------------|
 | `pdfgpt` | Run this command to have your entire repository compiled into one simple .pdf file that will be stored in the directory!|
 | `commandlist` | Displays a list of all available commands in the terminal. |
-| `ignoreadd <FILENAME>`   | Adds a file to the ignore list based on its filename. |
-| `ignoreremove <FILENAME>`| Removes a file from the ignore list based on its filename. |
+| `ignoreadd <FILENAME>`   | Adds a file to the ignore list based on its filename. Starting with version 0.2.0 you can also include paths too. |
+| `ignoreremove <FILENAME>`| Removes a file from the ignore list based on its filename. Starting with version 0.2.0 you can also include paths too. |
 | `ignoreshow`  | Shows the current contents of the ignore list in the terminal. |
 | `lastupdate`  | Displays information about the latest update. |
 | `repository`  | Prints the link to the GitHub repository for PDFGPT. Chances are if you're reading this, you probably know how that command works! |
@@ -27,7 +27,7 @@ This project includes several terminal commands for managing the workflow and ac
 ## Features Explained
 
 ### Ignore List
-The Ignore List essentially acts as a .gitignore, as any file name added to the list will be... ignored... by PDFGPT. Keep in mind they work off a filename basis so do not write down the file path as well.
+The Ignore List essentially acts as a .gitignore, as any file name added to the list will be... ignored... by PDFGPT. The program works with both file names as well as file paths.
 
 <sub>Web devs, forgive me.</sub>
 
